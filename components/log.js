@@ -6,7 +6,7 @@ import { Card } from 'react-native-elements';
 class Log extends React.Component {
     render() {
         const { log } = this.props;
-        const netCalories = log.caloriesGained - log.caloriesLost
+        const netCalories = log.caloriesGained - log.caloriesLost;
         return (
             <Card>
                 <Text>
