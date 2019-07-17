@@ -36,7 +36,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        addLog: (log) => { dispatch( AddLog(log)) }
+        addLog: (log) => { dispatch(AddLog(log)) }
     }
 }
 
