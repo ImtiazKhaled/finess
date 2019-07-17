@@ -4,3 +4,17 @@ export const AddLog = (log) => {
         log
     }
 }
+
+export const DeleteLog = (id) => {
+    return {
+        type: 'DELETE_LOG',
+        id
+    }
+}
+
+export const EditLog = (log) => {
+    return {
+        type: 'ADD_LOG',
+        log
+    }
+}

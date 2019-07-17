@@ -15,10 +15,6 @@ const logToAdd = {
 
 class LogScreen extends React.Component {
     render() {
-        // onAddClick = () => {
-        //     ;
-        // }
-        // console.log(this.props);
         return (
             <ScrollView>
                 {this.props.logs.map(
@@ -40,8 +36,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        addLog: (log) => { dispatch( 
-            AddLog(log)) }
+        addLog: (log) => { dispatch( AddLog(log)) }
     }
 }
 
