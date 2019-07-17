@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, Text} from 'react-native';
 import { Card, Button } from 'react-native-elements';
 import { connect } from 'react-redux';
-import { DeleteLog } from '../redux/logActions';
+import { DeleteLog, EditLog } from '../redux/logActions';
 
 
 class Log extends React.Component {
@@ -26,8 +26,8 @@ class Log extends React.Component {
                  <Text>
                     A Happy Memory From Today: {log.happyMemory}
                 </Text>
-                {/* <Button title='Edit Post'/> */}
-                <Button title='Delete Post' onPress={ () => this.props.deleteLog(log.id)} />
+                <Button title='Edit Log' onPress={ () => this.props.editLog(log)}/>
+                <Button title='Delete Log' onPress={ () => this.props.deleteLog(log.id)} />
             </Card>
         );
     }
@@ -41,8 +41,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return{
-        deleteLog: (id) => { dispatch( DeleteLog(id)) }
-        // editLog: (log) => { dispatch() }
+        deleteLog: (id) => { dispatch( DeleteLog(id)) },
+        editLog: (log) => { dispatch( EditLog(log)) }
     }
 }
 

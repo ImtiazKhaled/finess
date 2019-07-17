@@ -17,16 +17,23 @@ const initialState = {
 const RootReducer = (state = initialState, action) => {
     switch (action.type) {
         case 'ADD_LOG':
-            let logToAdd = action.log;
+            const logToAdd = action.log;
             let logs = [...state.logs, logToAdd]
             return { ...state, logs }
         case 'DELETE_LOG':
             logs = state.logs
-            var filteredLogs = logs.filter((log) => {
+            let filteredLogs = logs.filter((log) => {
                 return log.id != action.id
             })
-            console.log(filteredLogs);
             return { ...state, logs: filteredLogs }
+        case 'EDIT_LOG':
+            logs = state.logs
+            filteredLogs = logs.filter((log) => {
+                return log.id != action.log.id
+            })
+            const logToEdit = action.log;
+            logs = [...filteredLogs, logToEdit]
+            return { ...state, logs: logs }
         default:
             console.log('that is not a valid type, check the code');
     }

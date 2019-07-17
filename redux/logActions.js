@@ -14,7 +14,7 @@ export const DeleteLog = (id) => {
 
 export const EditLog = (log) => {
     return {
-        type: 'ADD_LOG',
+        type: 'EDIT_LOG',
         log
     }
 }
